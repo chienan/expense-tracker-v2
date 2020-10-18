@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row my-auto justify-content-center align-items-center text-center">
+    <form action="/records" method="POST">
+
+      <div class="form-group">
+        <select class="form-control" id="filter-category" name="category" onchange="submit">
+
+
+          <option value="其他,fas fa-pen">選擇類別</option>
+
+          {{#each categories}}
+          <option value="{{this.name}},{{this.tag}}">{{this.name}}</option>
+          {{/each}}
+
+        </select>
+      </div>
+
+      <input type="text" placeholder="支出名稱" name="name" class="mb-2 form-control" style="width: 300px;" required>
+
+      <input type="date" placeholder="日期" name="date" class="mb-2 form-control" style="width: 300px;" required>
+
+      <input type="number" placeholder="金額" name="amount" class="mb-2 form-control" style="width: 300px;" required>
+
+
+      <button type="submit" class="btn btn-outline-secondary">新增</button>
+
+    </form>
+  </div>
+</div>
